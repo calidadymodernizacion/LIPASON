@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="es-MX">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#f8f9fd">
+  <meta name="description" content="LIPASON — Laboratorio de Innovación Pública Aplicada. Iniciativa académica independiente: ideas públicas que cobran vida mediante prototipos explorables.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="LIPASON — Ideas públicas que cobran vida">
+  <meta property="og:description" content="De las propuestas académicas a prototipos digitales explorables. Laboratorio académico independiente de innovación pública aplicada.">
+  <meta property="og:image" content="assets/social.svg">
+  <title>LIPASON — Ideas públicas que cobran vida</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;650;700;750;800;850&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+  <a class="skip-link" href="#contenido">Ir al contenido</a>
+  <header class="site-header" id="inicio">
+    <div class="shell nav-row">
+      <a class="brand" href="#inicio" aria-label="LIPASON, inicio">
+        <img class="brand-symbol" src="assets/brand.svg" alt="" width="42" height="42">
+        <span class="brand-word">LIPA<span>SON</span><i>.</i></span>
+        <span class="brand-divider" aria-hidden="true"></span>
+        <span class="brand-caption">Laboratorio de<br>Innovación Pública Aplicada</span>
+      </a>
+      <nav class="desktop-nav" aria-label="Navegación principal">
+        <a href="#prototipos">Prototipos</a>
+        <a href="#metodologia">Metodología</a>
+        <a href="#origen">Nuestro origen</a>
+        <a href="#principios">Principios</a>
+      </nav>
+      <a class="header-link" href="#prototipos">Explorar proyectos <span aria-hidden="true">↗</span></a>
+      <button id="menuToggle" class="menu-toggle" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobileNav"><span></span><span></span><span></span></button>
+    </div>
+    <nav class="mobile-nav" id="mobileNav" aria-label="Navegación móvil" hidden>
+      <a href="#prototipos">Prototipos</a><a href="#metodologia">Metodología</a><a href="#origen">Nuestro origen</a><a href="#principios">Principios</a>
+    </nav>
+  </header>
+  <main id="contenido">
+    <section class="hero shell" aria-labelledby="heroTitle">
+      <div class="hero-copy">
+        <span class="eyebrow">DEL PAPEL AL PROTOTIPO</span>
+        <h1 id="heroTitle">Ideas públicas<br>que cobran <em>vida.</em></h1>
+        <p class="lead">LIPASON es un <strong>laboratorio académico de innovación pública</strong> donde los proyectos estudiantiles dejan de ser documentos y se convierten en <strong>prototipos digitales</strong> que pueden verse, explorarse y mejorarse.</p>
+        <div class="hero-buttons">
+          <a class="btn btn-dark" href="#prototipos">Explorar proyectos <span aria-hidden="true">→</span></a>
+          <a class="btn btn-outline" href="#metodologia">Conoce la metodología</a>
+        </div>
+      </div>
+      <div class="hero-art hero-art-original" aria-hidden="true">
+        <img class="hero-original-image"
+             src="assets/hero-scene.webp"
+             onerror="this.onerror=null;this.src='assets/hero-respaldo.webp';"
+             alt=""
+             width="870" height="520"
+             decoding="async" fetchpriority="high">
+      </div>
+    </section>
+    <div class="shell"><div class="hero-rule"></div></div>
+    <section class="section shell catalog" id="prototipos" aria-labelledby="catalogTitle">
+      <div class="section-header catalog-header">
+        <div><span class="section-label">01 / COLECCIÓN FUNDACIONAL</span><h2 id="catalogTitle">Explora los <strong>prototipos</strong></h2><p>Los proyectos finales son elaborados por estudiantes; la coordinación de LIPASON desarrolla sus prototipos digitales. Abre una ficha para conocer la propuesta y explorar su funcionamiento.</p></div>
+        <div class="catalog-tools"><label class="search-wrap"><svg viewBox="0 0 24 24" width="17" height="17" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m16 16 5 5"/></svg><span class="sr-only">Buscar prototipos</span><input id="searchProjects" type="search" placeholder="Buscar un prototipo…" autocomplete="off"></label><span class="catalog-count" id="catalogCount" aria-live="polite">Consultando catálogo</span></div>
+      </div>
+      <div id="catalogNotice" class="catalog-notice" role="status" hidden></div>
+      <div id="projectGrid" class="project-grid" aria-live="polite"><div class="catalog-loading">Cargando proyectos publicados…</div></div>
+      <p class="catalog-footnote">Los prototipos son demostraciones académicas. No constituyen servicios gubernamentales en operación ni sustituyen los canales oficiales.</p>
+    </section>
+    <section class="section methodology-section" id="metodologia" aria-labelledby="methodTitle">
+      <div class="shell method-layout">
+        <div class="method-intro"><span class="section-label light">02 / CÓMO TRABAJAMOS</span><h2 id="methodTitle">Del papel<br>al <em>prototipo.</em></h2><p>Dos aportaciones complementarias: los estudiantes identifican y estudian los problemas públicos, y diseñan sus soluciones; LIPASON convierte sus propuestas en prototipos digitales para explorarlos y compartirlos.</p><a class="text-link-light" href="#origen">Conoce la historia del laboratorio <span aria-hidden="true">↗</span></a></div>
+        <div class="method-steps">
+          <article><span class="step-num">01</span><div><span class="step-role">TRABAJO DE LOS ESTUDIANTES</span><h3>Identificar y analizar el problema</h3><p>Los estudiantes investigan el problema público, sus causas, contexto, actores y necesidades.</p></div></article>
+          <article><span class="step-num">02</span><div><span class="step-role">TRABAJO DE LOS ESTUDIANTES</span><h3>Diseñar la propuesta de solución</h3><p>Los estudiantes elaboran su proyecto final: diagnóstico, objetivos, propuesta de mejora y funcionamiento esperado.</p></div></article>
+          <article><span class="step-num">03</span><div><span class="step-role">DESARROLLO DEL LABORATORIO</span><h3>Materializar el proyecto</h3><p>LIPASON desarrolla el prototipo digital a partir de la propuesta elaborada por los estudiantes.</p></div></article>
+          <article><span class="step-num">04</span><div><span class="step-role">DIFUSIÓN DESDE LIPASON</span><h3>Publicar para explorar y aprender</h3><p>Se presenta la ficha, se reconoce la procedencia académica y se ofrece acceso al prototipo, con sus alcances y límites.</p></div></article>
+        </div>
+      </div>
+    </section>
+    <section class="section shell origin-section" id="origen" aria-labelledby="originTitle">
+      <div class="origin-marker"><span class="section-label">03 / NUESTRA HISTORIA</span><div class="origin-stamp">LIPASON <b>↗</b></div></div>
+      <div class="origin-copy"><h2 id="originTitle">Nacimos en el aula.<br><strong>Miramos más allá.</strong></h2>
+        <p>LIPASON surgió de una experiencia docente en la asignatura <em>Calidad y Modernización en el Servicio Público</em>, de la Maestría en Administración Pública del Instituto Sonorense de Administración Pública (ISAP).</p>
+        <p>Las y los estudiantes son quienes identifican y analizan los problemas públicos, investigan su contexto y elaboran las propuestas de solución como trabajo final de la asignatura. Después de esta etapa académica, LIPASON realiza el desarrollo tecnológico que transforma esas propuestas en prototipos digitales funcionales y explorables.</p>
+        <p>Con una primera colección de 15 prototipos desarrollados, somos una <strong>iniciativa académica independiente</strong> que reconoce ese origen y busca ampliar las posibilidades de aprendizaje, experimentación y difusión del conocimiento, sin limitarse a una asignatura o institución.</p>
+        <div class="origin-note"><span aria-hidden="true">ⓘ</span><p>El vínculo de origen con el ISAP es académico e histórico. LIPASON no se presenta como un programa oficial, patrocinado o avalado por esa institución.</p></div>
+      </div>
+    </section>
+    <section class="section principles-section" id="principios" aria-labelledby="principlesTitle">
+      <div class="shell"><div class="section-header"><div><span class="section-label">04 / NUESTROS PRINCIPIOS</span><h2 id="principlesTitle">Innovación con <strong>rigor y transparencia.</strong></h2></div><p>La apertura del laboratorio exige cuidar la procedencia de las propuestas, distinguir responsabilidades y comunicar los alcances reales de cada demostración.</p></div>
+        <div class="principles-grid"><article><span class="principle-icon">◎</span><h3>Reconocimiento de autoría</h3><p>La investigación, el diagnóstico y la propuesta de solución pertenecen a la aportación estudiantil; el desarrollo del prototipo digital corresponde a LIPASON. Los nombres de estudiantes solo se publican con autorización.</p></article><article><span class="principle-icon">◇</span><h3>Experimentación responsable</h3><p>Los prototipos ayudan a explorar posibilidades. No equivalen a sistemas institucionales validados, servicios oficiales ni soluciones listas para operar.</p></article><article><span class="principle-icon">↗</span><h3>Conocimiento abierto</h3><p>Compartimos fichas y experiencias digitales para favorecer la reflexión, la discusión y el aprendizaje sobre problemas públicos.</p></article></div>
+      </div>
+    </section>
+    <section class="statement shell" aria-labelledby="statementTitle"><div><span class="section-label">LO QUE NOS MUEVE</span><h2 id="statementTitle">Una buena propuesta<br>merece <em>poder explorarse.</em></h2></div><a class="btn btn-purple" href="#prototipos">Descubre los proyectos <span aria-hidden="true">↗</span></a></section>
+  </main>
+  <footer class="footer"><div class="shell footer-layout"><div><a class="footer-logo" href="#inicio">LIPA<span>SON</span><i>.</i></a><p>Laboratorio de Innovación Pública Aplicada.<br>Iniciativa académica independiente · Sonora, México.</p></div><nav aria-label="Enlaces del pie de página"><a href="#prototipos">Prototipos</a><a href="#metodologia">Metodología</a><a href="#origen">Nuestro origen</a><a href="#principios">Principios</a><a class="editor-link" href="admin.html" title="Acceso al panel de control">Panel de control</a></nav></div><div class="shell footer-bottom"><span>Ideas públicas que cobran vida.</span><span>Los contenidos son de naturaleza académica y demostrativa.</span></div></footer>
+
+  <dialog class="project-dialog" id="projectDialog" aria-labelledby="dialogTitle">
+    <button id="dialogClose" class="dialog-close" type="button" aria-label="Cerrar ficha">×</button>
+    <div class="dialog-grid">
+      <div class="dialog-image-wrap"><img id="dialogImage" alt="Imagen del prototipo" src="assets/project-fallback.svg"><span class="dialog-image-label">FICHA DEL PROYECTO</span></div>
+      <div class="dialog-info">
+        <div class="dialog-head"><span class="section-label">PROTOTIPO / LIPASON</span><h2 id="dialogTitle">Proyecto</h2><p id="dialogSummary" class="dialog-summary"></p></div>
+        <div class="dialog-primary-action"><a id="prototypeLink" class="btn btn-purple" href="#" rel="noopener noreferrer" target="_blank" hidden>Explorar prototipo <span aria-hidden="true">↗</span></a><p id="missingLink" class="missing-link" hidden>El enlace de este prototipo aún no está incorporado a la ficha.</p></div>
+        <div id="dialogFields" class="dialog-fields"></div>
+        <p class="dialog-disclaimer">Prototipo académico demostrativo. No es un servicio gubernamental en operación. Utiliza información ficticia o de prueba; no ingreses datos personales reales.</p>
+        <div class="dialog-bottom"><button id="copyProject" class="copy-link" type="button">Copiar enlace a esta ficha <span aria-hidden="true">↗</span></button></div>
+      </div>
+    </div>
+  </dialog>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="config.js"></script>
+  <script defer src="assets/site.js"></script>
+</body>
+</html>
