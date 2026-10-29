@@ -1,0 +1,90 @@
+[
+  {
+    "slug": "protocoloclaria",
+    "label": "CLARIA",
+    "filename": "project-protocoloclaria.webp",
+    "image_url": "assets/project-protocoloclaria.webp",
+    "dimensions": "1586x933",
+    "bytes": 90738
+  },
+  {
+    "slug": "brujulaues",
+    "label": "Brújula UES",
+    "filename": "project-brujulaues.webp",
+    "image_url": "assets/project-brujulaues.webp",
+    "dimensions": "1586x933",
+    "bytes": 152554
+  },
+  {
+    "slug": "sigesalud",
+    "label": "SIGE-Salud",
+    "filename": "project-sigesalud.webp",
+    "image_url": "assets/project-sigesalud.webp",
+    "dimensions": "1586x933",
+    "bytes": 80244
+  },
+  {
+    "slug": "mgcip",
+    "label": "MGCIP",
+    "filename": "project-mgcip.webp",
+    "image_url": "assets/project-mgcip.webp",
+    "dimensions": "1586x933",
+    "bytes": 70636
+  },
+  {
+    "slug": "mitse",
+    "label": "MITSE",
+    "filename": "project-mitse.webp",
+    "image_url": "assets/project-mitse.webp",
+    "dimensions": "1586x933",
+    "bytes": 59586
+  },
+  {
+    "slug": "quiriegocercadeti",
+    "label": "DIF Cerca de Ti",
+    "filename": "project-quiriegocercadeti.webp",
+    "image_url": "assets/project-quiriegocercadeti.webp",
+    "dimensions": "1586x933",
+    "bytes": 66760
+  },
+  {
+    "slug": "soeci",
+    "label": "SOECI",
+    "filename": "project-soeci.webp",
+    "image_url": "assets/project-soeci.webp",
+    "dimensions": "1586x933",
+    "bytes": 50928
+  },
+  {
+    "slug": "sigeslegislativo",
+    "label": "SIGSE",
+    "filename": "project-sigeslegislativo.webp",
+    "image_url": "assets/project-sigeslegislativo.webp",
+    "dimensions": "1586x933",
+    "bytes": 61914
+  },
+  {
+    "slug": "sigessonora",
+    "label": "SIGES Sonora",
+    "filename": "project-sigessonora.webp",
+    "image_url": "assets/project-sigessonora.webp",
+    "dimensions": "1586x933",
+    "bytes": 55310
+  },
+  {
+    "slug": "controlpje",
+    "label": "Control PJE",
+    "filename": "project-controlpje.webp",
+    "image_url": "assets/project-controlpje.webp",
+    "dimensions": "1586x933",
+    "bytes": 60440
+  },
+  {
+    "slug": "hermosilloconecta",
+    "label": "Hermosillo Conecta",
+    "filename": "project-hermosilloconecta.webp",
+    "image_url": "assets/project-hermosilloconecta.webp",
+    "dimensions": "1586x933",
+    "bytes": 60138
+  }
+]
