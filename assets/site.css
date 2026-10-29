@@ -138,26 +138,15 @@
 }
 
 
-/* LIPASON | Iniciativa independiente: capacidades y colaboraciones */
-.capabilities-section{padding-top:98px;padding-bottom:113px}
-.capabilities-header{align-items:end;gap:60px}
-.capabilities-header>p{max-width:360px;margin:0 0 9px}
-.capabilities-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:37px}
-.capability-card{background:#fff;border:1px solid #e5e9f1;border-radius:17px;padding:31px 30px 35px;min-height:265px;box-shadow:0 9px 28px rgba(29,43,78,.035)}
-.capability-number,.collaboration-tag{font-size:10px;font-weight:800;letter-spacing:.16em;color:#6b63c9}
-.capability-card h3{font-size:clamp(21px,2vw,27px);font-weight:750;letter-spacing:-.055em;line-height:1.18;margin:35px 0 15px;color:#172239}
-.capability-card p{font-size:13px;color:#637084;line-height:1.82;margin:0}
-.collaboration-section{display:grid;grid-template-columns:.93fr 1.07fr;gap:70px;padding-top:112px;padding-bottom:102px;border-top:1px solid #e5e8f0}
-.collaboration-intro h2{font-size:clamp(36px,3.8vw,55px);font-weight:450;letter-spacing:-.068em;line-height:1.16;margin:17px 0 25px}
+
+/* LIPASON · enfoque editorial centrado en los proyectos académicos. */
+.collaboration-section{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(32px,6vw,96px);padding-top:108px;padding-bottom:125px;border-top:1px solid #e5e8f0}
+.collaboration-intro h2{font-size:clamp(35px,4vw,58px);font-weight:430;letter-spacing:-.065em;line-height:1.14;margin:18px 0}
 .collaboration-intro h2 strong{font-weight:800}
-.collaboration-intro p{font-size:14px;color:#5d6b7c;line-height:1.9;max-width:515px;margin:0}
-.collaboration-types{border-top:1px solid #dce1ec}
-.collaboration-types article{border-bottom:1px solid #dce1ec;padding:25px 4px 27px}
-.collaboration-types h3{font-size:20px;letter-spacing:-.04em;line-height:1.25;margin:9px 0;color:#202b40}
-.collaboration-types p{font-size:12px;color:#647085;line-height:1.8;margin:0}
-.collaboration-note{grid-column:1/-1;font-size:11px;line-height:1.75;color:#7b8596;margin:0;max-width:850px}
-.capability-card p,.collaboration-intro p,.collaboration-types p,.collaboration-note{text-align:justify;text-align-last:left;hyphens:auto;overflow-wrap:break-word}
-@media(max-width:1000px){.collaboration-section{gap:38px}}
-@media(max-width:850px){.capabilities-header{display:block}.capabilities-header>p{margin:18px 0 0;max-width:690px}.collaboration-section{grid-template-columns:1fr;gap:40px}.collaboration-note{grid-column:1}.capability-card{padding:25px 20px;min-height:245px}}
-@media(max-width:600px){.capabilities-section{padding-top:62px;padding-bottom:70px}.capabilities-grid{grid-template-columns:1fr;gap:12px;margin-top:25px}.capability-card{min-height:0;padding:24px}.capability-card h3{margin:18px 0 10px}.collaboration-section{padding-top:65px;padding-bottom:65px;gap:28px}.collaboration-intro h2{font-size:clamp(32px,8vw,43px)}.capability-card p,.collaboration-intro p,.collaboration-types p,.collaboration-note{text-align:left;text-align-last:left;hyphens:none}}
-@media(prefers-reduced-motion:no-preference){.capability-card{transition:transform .3s var(--motion-ease),box-shadow .3s ease}.capability-card:hover{transform:translateY(-3px);box-shadow:0 18px 35px rgba(29,43,78,.09)}}
+.collaboration-focus{padding-top:29px;max-width:660px}
+.collaboration-focus p{font-size:15px;line-height:1.9;color:#5e6a7c;margin:0 0 20px;text-align:justify;text-align-last:left;hyphens:auto}
+.collaboration-focus p strong{color:#1a273b;font-weight:700}
+.collaboration-link{display:inline-flex;align-items:center;gap:14px;color:#5a4ce8;font-size:12px;font-weight:800;padding:0 0 9px;margin:3px 0 22px;border-bottom:1px solid #aea5f2}
+.collaboration-focus small{display:block;font-size:10px;line-height:1.7;color:#828b9b}
+@media(max-width:850px){.collaboration-section{grid-template-columns:1fr;gap:8px;padding-top:76px;padding-bottom:90px}.collaboration-focus{padding-top:8px;max-width:100%}}
+@media(max-width:600px){.collaboration-section{padding-top:56px;padding-bottom:65px}.collaboration-intro h2{font-size:clamp(33px,8vw,46px)}.collaboration-focus p{text-align:left;text-align-last:left;hyphens:none;font-size:14px}}
