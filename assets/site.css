@@ -141,12 +141,23 @@
 
 /* LIPASON · enfoque editorial centrado en los proyectos académicos. */
 .collaboration-section{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(32px,6vw,96px);padding-top:108px;padding-bottom:125px;border-top:1px solid #e5e8f0}
-.collaboration-intro h2{font-size:clamp(35px,4vw,58px);font-weight:430;letter-spacing:-.065em;line-height:1.14;margin:18px 0}
+.collaboration-intro h2{font-size:clamp(39px,4vw,59px);font-weight:430;letter-spacing:-.063em;line-height:1.14;margin:18px 0 24px;color:#141c2b}
 .collaboration-intro h2 strong{font-weight:800}
 .collaboration-focus{padding-top:29px;max-width:660px}
 .collaboration-focus p{font-size:15px;line-height:1.9;color:#5e6a7c;margin:0 0 20px;text-align:justify;text-align-last:left;hyphens:auto}
 .collaboration-focus p strong{color:#1a273b;font-weight:700}
-.collaboration-link{display:inline-flex;align-items:center;gap:14px;color:#5a4ce8;font-size:12px;font-weight:800;padding:0 0 9px;margin:3px 0 22px;border-bottom:1px solid #aea5f2}
+.collaboration-link{display:inline-flex;align-items:center;justify-content:space-between;gap:14px;color:#fff;background:#6659eb;border:1px solid #6659eb;border-radius:12px;font-size:12px;font-weight:750;line-height:1.4;padding:15px 20px;margin:7px 0 23px;max-width:100%;box-shadow:0 9px 24px rgba(103,89,235,.16);transition:transform .25s,background .25s;overflow-wrap:anywhere}.collaboration-link:hover{background:#4e44c8;transform:translateY(-2px)}.collaboration-link:focus-visible{outline:3px solid #b6b0ff;outline-offset:3px}
 .collaboration-focus small{display:block;font-size:10px;line-height:1.7;color:#828b9b}
 @media(max-width:850px){.collaboration-section{grid-template-columns:1fr;gap:8px;padding-top:76px;padding-bottom:90px}.collaboration-focus{padding-top:8px;max-width:100%}}
 @media(max-width:600px){.collaboration-section{padding-top:56px;padding-bottom:65px}.collaboration-intro h2{font-size:clamp(33px,8vw,46px)}.collaboration-focus p{text-align:left;text-align-last:left;hyphens:none;font-size:14px}}
+
+/* Legibilidad del pie de página: enlaces siempre visibles y navegables. */
+.footer-layout nav{display:flex;flex-wrap:wrap;gap:15px 22px;align-items:center}
+.footer-layout nav a{display:inline-flex;align-items:center;min-height:30px;color:#e9edfa;opacity:1;text-decoration:none}
+.footer-layout nav a:hover,.footer-layout nav a:focus-visible{color:#afa7ff}
+.footer .editor-link{opacity:.82}
+@media(max-width:600px){
+  .footer-layout nav{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px 16px}
+  .footer-layout nav a{padding:8px 0;min-height:42px}
+  .collaboration-link{width:100%;min-height:49px}
+}
