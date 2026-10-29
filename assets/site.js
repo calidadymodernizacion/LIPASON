@@ -6,6 +6,9 @@
   const dialog = $('#projectDialog');
   const legacyBase = 'https://calidadymodernizacion.github.io/LIPA/';
   const fallbackImage = 'assets/project-fallback.svg';
+  // La colección fundacional procede de trabajos académicos del ISAP.
+  // Proyectos futuros de otras colaboraciones no reciben esa atribución automáticamente.
+  const foundationalSlugs = new Set(['siivec','salud-oportuna','siref-festividades','vera-c3','protocoloclaria','brujulaues','sigesalud','mgcip','mitse','quiriegocercadeti','soeci','sigeslegislativo','sigessonora','controlpje','hermosilloconecta']);
   let projects = [];
   let lastFocus = null;
   let activeSlug = null;
@@ -58,13 +61,14 @@
     $('#dialogSummary').textContent = p.summary || '';
     const img = $('#dialogImage'); img.src = safeImage(p.image_url); imageFallback(img); img.alt = 'Imagen de presentación del prototipo ' + p.title;
     const fields = $('#dialogFields'); fields.replaceChildren();
+    const isFoundational = foundationalSlugs.has(p.slug);
     const rows = [
       ['Área temática',p.category],
-      ...(p.show_author && p.author_name ? [['Propuesta académica · autoría estudiantil',p.author_name]] : []),
-      ['Propuesta académica · trabajo estudiantil','En la colección fundacional, los estudiantes identificaron y analizaron el problema público, investigaron su contexto y diseñaron la propuesta de solución como trabajo final.'],
+      ...(p.show_author && p.author_name ? [[isFoundational ? 'Propuesta académica · autoría estudiantil' : 'Autoría de la propuesta',p.author_name]] : []),
+      ...(isFoundational ? [['Origen académico','Este proyecto forma parte de la colección fundacional: los estudiantes investigaron el problema público y elaboraron la propuesta como trabajo final.']] : []),
       ['Problema público',p.problem],['Solución propuesta',p.solution],['Qué puedes explorar',p.features],
-      ['Desarrollo del prototipo digital','LIPASON materializó tecnológicamente la propuesta de los estudiantes como prototipo explorable.'],
-      ['Estado','Prototipo académico demostrativo · No es un servicio gubernamental en operación']
+      ...(isFoundational ? [['Desarrollo del prototipo digital','LIPASON materializó tecnológicamente la propuesta estudiantil como prototipo explorable.']] : []),
+      ['Estado',isFoundational ? 'Prototipo académico demostrativo · No es un servicio gubernamental en operación' : 'Demostración funcional · Su eventual adopción requiere evaluación y autorizaciones correspondientes']
     ];
     for (const [label,value] of rows) { const el = field(label,value); if (el) fields.append(el); }
     const valid = isHttps(p.prototype_url);
