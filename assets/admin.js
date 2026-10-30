@@ -12,7 +12,25 @@
   function renderList(){const wrap=$('#projectList');wrap.replaceChildren();$('#projectCount').textContent=rows.length;if(!rows.length){wrap.textContent='Aún no hay publicaciones.';return}for(const rec of rows){const b=document.createElement('button');b.type='button';b.className='editor-item'+(rec.id===selectedId?' selected':'');const content=document.createElement('span');const title=document.createElement('strong');title.textContent=rec.title;const small=document.createElement('small');small.textContent=rec.category||'Sin categoría';content.append(title,small);const badge=document.createElement('span');badge.className='editor-badge'+(rec.is_published?' published':'');badge.textContent=rec.is_published?'Publicado':'Borrador';b.append(content,badge);b.addEventListener('click',()=>open(rec));wrap.append(b)}}
   async function refresh(){const {data,error}=await client.from('lipa_projects').select('*').order('sort_order',{ascending:true}).order('created_at',{ascending:true});if(error){msg('#formMessage','No se pudo consultar los proyectos: '+error.message,true);return}rows=data||[];renderList()}
   function open(rec){selectedId=rec?.id||null;$('#projectForm').reset();slugTouched=Boolean(rec);for(const key of fields)fill(key,rec?.[key]??(key==='sort_order'?50:''));$('#editingTitle').textContent=rec?'Editar '+rec.title:'Nuevo proyecto';$('#deleteProject').hidden=!rec;$('#uploadImage').value='';$('#imagePreview').src=previewURL(rec?.image_url);msg('#formMessage','');renderList();window.scrollTo({top:0,behavior:'smooth'})}
-  async function verify(user){const {data,error}=await client.from('lipa_admins').select('user_id').eq('user_id',user.id).maybeSingle();if(error||!data){await client.auth.signOut();msg('#loginMessage','La cuenta no está autorizada como editora.',true);return}$('#loginPanel').hidden=true;$('#workspace').hidden=false;$('#logout').hidden=false;await refresh();}
+  function setAdminTab(name, updateHash = false) {
+    const consent = name === 'autorizaciones';
+    $('#projectsSection').hidden = consent;
+    $('#consentsSection').hidden = !consent;
+    $('#tabProjects').classList.toggle('selected',!consent);
+    $('#tabConsents').classList.toggle('selected',consent);
+    $('#tabProjects').setAttribute('aria-selected',String(!consent));
+    $('#tabConsents').setAttribute('aria-selected',String(consent));
+    if (updateHash) history.replaceState(null,'',consent ? '#autorizaciones' : '#proyectos');
+    if (consent) document.dispatchEvent(new Event('lipa:consents-open'));
+  }
+  $('#tabProjects').addEventListener('click',()=>setAdminTab('proyectos',true));
+  $('#tabConsents').addEventListener('click',()=>setAdminTab('autorizaciones',true));
+  window.addEventListener('hashchange',()=>{
+    if($('#workspace').hidden) return;
+    setAdminTab(location.hash==='#autorizaciones'?'autorizaciones':'proyectos');
+  });
+
+  async function verify(user){const {data,error}=await client.from('lipa_admins').select('user_id').eq('user_id',user.id).maybeSingle();if(error||!data){await client.auth.signOut();msg('#loginMessage','La cuenta no está autorizada como editora.',true);return}$('#loginPanel').hidden=true;$('#workspace').hidden=false;$('#logout').hidden=false;await refresh();document.dispatchEvent(new CustomEvent('lipa:admin-ready',{detail:{client}}));setAdminTab(location.hash==='#autorizaciones'?'autorizaciones':'proyectos');}
   async function start(){if(!isHttps(cfg.supabaseUrl)||!cfg.supabasePublishableKey||!window.supabase?.createClient){msg('#loginMessage','No se pudo iniciar el panel. Revisa config.js y la conexión a internet.',true);$('#loginButton').disabled=true;return}client=window.supabase.createClient(cfg.supabaseUrl,cfg.supabasePublishableKey);try{const {data:{user},error}=await client.auth.getUser();if(user&&!error)await verify(user)}catch(e){msg('#loginMessage','Error de conexión con Supabase.',true)}}
   $('#loginForm').addEventListener('submit',async ev=>{ev.preventDefault();if(!client)return;$('#loginButton').disabled=true;msg('#loginMessage','Comprobando credenciales…');const {data,error}=await client.auth.signInWithPassword({email:$('#loginEmail').value.trim(),password:$('#loginPass').value});$('#loginButton').disabled=false;if(error){msg('#loginMessage','No se pudo acceder. Revisa tus credenciales.',true);return}await verify(data.user)});
   $('#logout').addEventListener('click',async()=>{if(client)await client.auth.signOut();location.reload()});
