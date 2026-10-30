@@ -144,5 +144,12 @@
     }, { threshold: 0.08, rootMargin: '0px 0px -28px 0px' });
     revealItems.forEach((item) => { item.classList.add('reveal-ready'); revealObserver.observe(item); });
   }
+  // Contacto accesible mediante interacción: evita publicar la dirección en el HTML.
+  const footerContact = $('#footerContact');
+  if (footerContact) footerContact.addEventListener('click', () => {
+    const localPart = String.fromCharCode(105, 110, 102, 111);
+    const domainPart = String.fromCharCode(108, 105, 112, 97, 115, 111, 110, 46, 109, 120);
+    window.location.href = 'mailto:' + localPart + '@' + domainPart;
+  });
   load();
 })();
