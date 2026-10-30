@@ -1,7 +1,6 @@
 'use strict';
 (() => {
   const $ = (selector) => document.querySelector(selector);
-  const cfg = window.LIPA_CONFIG || {};
   let client = null;
   let projects = [];
   let authors = [];
@@ -21,30 +20,6 @@
     $('#saveAuthor').textContent = value ? 'Guardando…' : 'Guardar registro';
   }
 
-  function showWorkspace() {
-    $('#authPanel').hidden = true;
-    $('#privateWorkspace').hidden = false;
-    $('#exitButton').hidden = false;
-  }
-
-  function concealWorkspace() {
-    $('#authPanel').hidden = false;
-    $('#privateWorkspace').hidden = true;
-    $('#exitButton').hidden = true;
-    projects = [];
-    authors = [];
-    projectId = null;
-    editingId = null;
-  }
-
-  async function authorized(user) {
-    if (!user?.id) return false;
-    const {data,error} = await client.from('lipa_admins')
-      .select('user_id').eq('user_id',user.id).maybeSingle();
-    if (error || !data) return false;
-    return true;
-  }
-
   async function refresh() {
     const [projectResult, authorResult] = await Promise.all([
       client.from('lipa_projects').select('id,title,slug,is_published')
@@ -59,7 +34,7 @@
     }
     projects = projectResult.data || [];
     authors = authorResult.data || [];
-    $('#projectCount').textContent = String(projects.length);
+    $('#consProjectCount').textContent = String(projects.length);
     $('#authorCount').textContent = String(authors.length);
     $('#activeCount').textContent = String(authors.filter((r)=>r.is_enabled).length);
     if(projectId && !projects.some((r)=>r.id===projectId)) projectId = null;
@@ -69,7 +44,7 @@
   }
 
   function renderProjects() {
-    const list = $('#projectList');
+    const list = $('#consProjectList');
     list.replaceChildren();
     const query = $('#projectSearch').value.trim().toLocaleLowerCase('es-MX');
     const filtered = projects.filter((p)=>p.title.toLocaleLowerCase('es-MX').includes(query)
@@ -167,62 +142,8 @@
     if(editingId && !projectAuthors.some((a)=>a.id===editingId)) hideAuthorForm();
   }
 
-  async function loadPrivate(user) {
-    if(!await authorized(user)) {
-      await client.auth.signOut();
-      concealWorkspace();
-      tell('#loginStatus','Esta cuenta no está autorizada para administrar LIPASON.',true);
-      return;
-    }
-    showWorkspace();
-    try {await refresh();}
-    catch {}
-  }
-
-  async function start() {
-    if(!window.supabase?.createClient || !cfg.supabasePublishableKey ||
-       !/^https:\/\/[a-z0-9-]+\.supabase\.co$/.test(cfg.supabaseUrl||'')) {
-      tell('#loginStatus','No se pudo cargar la conexión segura de LIPASON.',true);
-      $('#loginButton').disabled = true;
-      return;
-    }
-    client = window.supabase.createClient(cfg.supabaseUrl,cfg.supabasePublishableKey);
-    try {
-      const {data,error} = await client.auth.getUser();
-      if(data?.user && !error) await loadPrivate(data.user);
-    } catch {tell('#loginStatus','No se pudo recuperar la sesión.',true);}
-  }
-
-  $('#authForm').addEventListener('submit', async (event) => {
-    event.preventDefault();
-    if(!client || isBusy) return;
-    const button = $('#loginButton');
-    button.disabled = true;
-    tell('#loginStatus','Verificando acceso…');
-    try {
-      const {data,error} = await client.auth.signInWithPassword({
-        email:$('#loginEmail').value.trim(),
-        password:$('#loginPassword').value
-      });
-      if(error || !data?.user) {
-        tell('#loginStatus','No se pudo iniciar sesión. Revisa las credenciales.',true);
-        return;
-      }
-      tell('#loginStatus','');
-      await loadPrivate(data.user);
-    } catch {tell('#loginStatus','Error de conexión. Intenta de nuevo.',true);}
-    finally {button.disabled = false;}
-  });
-
-  $('#exitButton').addEventListener('click', async () => {
-    if(client) await client.auth.signOut();
-    concealWorkspace();
-    $('#authForm').reset();
-    tell('#loginStatus','');
-  });
-
   $('#projectSearch').addEventListener('input',renderProjects);
-  $('#projectList').addEventListener('click',(event)=>{
+  $('#consProjectList').addEventListener('click',(event)=>{
     const btn = event.target.closest('button[data-project-id]');
     if(!btn) return;
     projectId = btn.dataset.projectId;
@@ -297,5 +218,16 @@
     } finally {setBusy(false);}
   });
 
-  start();
+
+  async function openAuthors() {
+    if (!client) return;
+    try { await refresh(); }
+    catch (error) { tell('#editorStatus','No fue posible actualizar la información de autores.',true); }
+  }
+
+  document.addEventListener('lipa:admin-ready',(event)=>{
+    client = event.detail.client;
+    if (!$('#consentsSection').hidden) openAuthors();
+  });
+  document.addEventListener('lipa:consents-open',openAuthors);
 })();
