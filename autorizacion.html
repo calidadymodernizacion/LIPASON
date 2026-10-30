@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="es-MX">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow,noarchive">
+<title>Autorización de publicación · LIPASON</title>
+<meta name="description" content="Acceso individual a la demostración de autorizaciones académicas de LIPASON.">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css?v=20261030-03">
+<link rel="stylesheet" href="assets/authorization.css?v=20261030-01">
+</head>
+<body>
+<a class="skip-link" href="#main">Saltar al contenido</a>
+<header class="auth-header">
+  <div class="shell auth-nav">
+    <a class="brand" href="index.html" aria-label="LIPASON, volver al inicio">
+      <img class="brand-symbol" src="assets/brand.svg" alt="" width="42" height="42">
+      <span class="brand-word">LIPASON</span>
+      <span class="brand-divider" aria-hidden="true"></span>
+      <span class="brand-caption">Laboratorio de<br>Innovación Pública Aplicada</span>
+    </a>
+    <a class="auth-back" href="index.html">Volver al sitio <span aria-hidden="true">↗</span></a>
+  </div>
+</header>
+<main class="shell authorization" id="main">
+  <div class="auth-intro">
+    <span class="section-label">LIPASON / DEMOSTRACIÓN CONTROLADA</span>
+    <h1>Tu trabajo.<br><strong>Tu decisión.</strong></h1>
+    <p>Una manera clara y personal de decidir cómo puede compartirse una propuesta académica y el prototipo desarrollado a partir de ella.</p>
+    <div class="demo-notice" role="note"><strong>Esta es una prueba técnica.</strong> Las selecciones realizadas aquí no constituyen una autorización legal de publicación ni modifican el catálogo público.</div>
+  </div>
+  <div class="auth-panel">
+    <section id="loadingState" class="step-panel">
+      <span class="step-kicker">COMPROBANDO ACCESO</span>
+      <h2>Preparando acceso seguro…</h2>
+      <p>Consultando si tu cuenta tiene un proyecto de demostración asignado.</p>
+    </section>
+    <section id="loginState" class="step-panel" hidden>
+      <span class="step-kicker">01 / ACCESO INDIVIDUAL</span>
+      <h2>Confirma tu correo</h2>
+      <p>Para esta prueba utiliza el correo con el que administras LIPASON. No es posible elegir libremente un proyecto.</p>
+      <form id="loginForm">
+        <label for="email">Correo electrónico</label>
+        <input id="email" type="email" autocomplete="email" placeholder="tu-correo@ejemplo.com" required maxlength="254">
+        <button type="submit" class="btn btn-purple" id="sendButton">Recibir acceso por correo <span aria-hidden="true">→</span></button>
+      </form>
+      <p class="helper">El acceso se verificará con un código temporal o enlace de un solo uso enviado por Supabase.</p>
+    </section>
+    <section id="verifyState" class="step-panel" hidden>
+      <span class="step-kicker">02 / VERIFICACIÓN</span>
+      <h2>Revisa tu correo</h2>
+      <p id="verifyText">Introduce el código de seis dígitos recibido. Si llega un enlace, ábrelo para completar el acceso.</p>
+      <form id="verifyForm">
+        <label for="otp">Código temporal</label>
+        <input id="otp" type="text" inputmode="numeric" autocomplete="one-time-code" pattern="[0-9]{6,8}" minlength="6" maxlength="8" placeholder="000000" required>
+        <button type="submit" class="btn btn-purple" id="verifyButton">Verificar acceso <span aria-hidden="true">→</span></button>
+      </form>
+      <button type="button" class="text-action" id="changeEmail">Usar otro correo</button>
+    </section>
+    <section id="noInviteState" class="step-panel" hidden>
+      <span class="step-kicker">ACCESO RESTRINGIDO</span>
+      <h2>No hay una invitación asignada.</h2>
+      <p>La cuenta verificada no tiene permiso de acceso a esta demostración. Solo el correo preasignado puede consultar y registrar la prueba.</p>
+      <button type="button" class="text-action" id="noInviteExit">Cerrar sesión</button>
+    </section>
+    <section id="consentState" class="step-panel" hidden>
+      <span class="step-kicker">03 / TU PROYECTO DE PRUEBA</span>
+      <h2>Revisa las opciones</h2>
+      <div class="project-meta">
+        <div><small>Proyecto asignado</small><strong id="projectTitle"></strong></div>
+        <div><small>Autoría de demostración</small><strong id="authorName"></strong></div>
+        <div><small>Cuenta verificada</small><strong id="verifiedEmail"></strong></div>
+      </div>
+      <form id="consentForm">
+        <h3>¿Qué permitirías publicar?</h3>
+        <p class="intro-small">Cada opción es independiente. La autoría del trabajo académico y la autoría del desarrollo tecnológico del prototipo son cuestiones distintas.</p>
+        <label class="option"><input type="checkbox" id="ficha"><span><strong>Ficha académica</strong><small>Título, descripción y crédito del trabajo original.</small></span></label>
+        <label class="option"><input type="checkbox" id="prototype"><span><strong>Prototipo funcional</strong><small>Permiso de difusión de la demostración digital elaborada por LIPASON a partir de la propuesta.</small></span></label>
+        <label class="option"><input type="checkbox" id="document"><span><strong>Documento completo</strong><small>Publicación del trabajo final original en PDF, solo si se autorizara expresamente.</small></span></label>
+        <div class="conditions">
+          <h3>Condiciones de esta demostración</h3>
+          <p>El consentimiento real deberá ser voluntario, limitado a los materiales elegidos, sin cesión de derechos y sujeto a un acuerdo definitivo y aviso de privacidad. No supone que ninguna institución adopte o avale la propuesta.</p>
+          <label class="ack"><input id="ack" type="checkbox" required> Comprendo que esta prueba no autoriza la publicación real de ningún trabajo ni prototipo.</label>
+        </div>
+        <button type="submit" id="submitConsent" class="btn btn-purple">Registrar prueba <span aria-hidden="true">→</span></button>
+      </form>
+    </section>
+    <section id="completeState" class="step-panel" hidden>
+      <span class="step-kicker">PRUEBA REGISTRADA</span>
+      <div class="check-icon" aria-hidden="true">✓</div>
+      <h2>El registro funciona.</h2>
+      <p>Se guardó una respuesta de demostración asociada exclusivamente a la cuenta verificada.</p>
+      <dl class="receipt">
+        <div><dt>Referencia</dt><dd id="receiptId"></dd></div>
+        <div><dt>Fecha de registro</dt><dd id="receiptDate"></dd></div>
+        <div><dt>Opciones</dt><dd id="receiptOpts"></dd></div>
+      </dl>
+      <p class="helper"><strong>Sin validez jurídica:</strong> puedes repetir esta prueba. Las autorizaciones reales seguirán desactivadas hasta aprobar el acuerdo y el aviso de privacidad.</p>
+      <button type="button" class="btn btn-purple" id="resetDemo">Borrar prueba y repetir</button>
+    </section>
+    <p class="status" role="status" aria-live="polite" id="formStatus"></p>
+    <div class="panel-bottom"><span>Acceso asociado a una cuenta previamente identificada</span><button id="signOut" type="button" hidden>Cerrar sesión</button></div>
+  </div>
+</main>
+<footer class="auth-page-footer shell"><span>LIPASON · Laboratorio de Innovación Pública Aplicada</span><span>Prueba privada de verificación · Sin publicación automática</span></footer>
+<script src="config.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.118.0/dist/umd/supabase.min.js"></script>
+<script defer src="assets/authorization.js?v=20261030-01"></script>
+</body>
+</html>
