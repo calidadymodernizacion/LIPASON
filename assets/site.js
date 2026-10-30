@@ -144,12 +144,56 @@
     }, { threshold: 0.08, rootMargin: '0px 0px -28px 0px' });
     revealItems.forEach((item) => { item.classList.add('reveal-ready'); revealObserver.observe(item); });
   }
-  // Contacto accesible mediante interacción: evita publicar la dirección en el HTML.
+  // El correo se representa como imagen raster generada en el navegador.
+  // No se publica como texto ni como enlace mailto en el HTML.
   const footerContact = $('#footerContact');
-  if (footerContact) footerContact.addEventListener('click', () => {
+  const footerContactImage = $('#footerContactImage');
+  if (footerContact) {
     const localPart = String.fromCharCode(105, 110, 102, 111);
     const domainPart = String.fromCharCode(108, 105, 112, 97, 115, 111, 110, 46, 109, 120);
-    window.location.href = 'mailto:' + localPart + '@' + domainPart;
-  });
+    const address = localPart + '@' + domainPart;
+    footerContact.addEventListener('click', () => {
+      window.location.href = 'mailto:' + address;
+    });
+    if (footerContactImage) {
+      const paintEmail = () => {
+        const canvas = document.createElement('canvas');
+        const ctx = canvas.getContext('2d');
+        if (!ctx) return;
+        const font = '600 15px Inter, system-ui, sans-serif';
+        ctx.font = font;
+        const width = Math.ceil(ctx.measureText(address).width + 37);
+        const height = 30;
+        const dpr = Math.min(window.devicePixelRatio || 1, 3);
+        canvas.width = Math.round(width * dpr);
+        canvas.height = height * dpr;
+        ctx.scale(dpr, dpr);
+        ctx.font = font;
+        ctx.fillStyle = '#eceaff';
+        ctx.textBaseline = 'middle';
+        ctx.fillText(address, 35, 15.5);
+        ctx.strokeStyle = '#b1a8ff';
+        ctx.lineWidth = 1.7;
+        ctx.lineCap = 'round';
+        ctx.lineJoin = 'round';
+        ctx.beginPath();
+        ctx.roundRect(2, 6, 24, 18, 3);
+        ctx.stroke();
+        ctx.beginPath();
+        ctx.moveTo(3.5, 8.5);
+        ctx.lineTo(14, 16.5);
+        ctx.lineTo(24.5, 8.5);
+        ctx.stroke();
+        footerContactImage.src = canvas.toDataURL('image/png');
+        footerContactImage.width = width;
+        footerContactImage.height = height;
+      };
+      if (document.fonts && document.fonts.ready) {
+        document.fonts.ready.then(paintEmail, paintEmail);
+      } else {
+        paintEmail();
+      }
+    }
+  }
   load();
 })();
