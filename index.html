@@ -2,141 +2,148 @@
 <html lang="es-MX">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="theme-color" content="#f8f9fd">
-  <meta name="description" content="LIPASON es una iniciativa académica de innovación pública surgida de los trabajos finales de Calidad y Modernización en el Servicio Público, de la Maestría en Administración Pública del ISAP. Presenta prototipos digitales funcionales derivados de las propuestas del alumnado.">
+  <meta name="description" content="LIPASON, Laboratorio de Innovación Pública Aplicada. Un espacio para transformar ideas en posibilidades de mejora para los asuntos públicos mediante conocimiento, colaboración y herramientas digitales.">
+  <meta name="robots" content="index, follow, max-image-preview:large">
   <link rel="canonical" href="https://lipason.mx/">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="es_MX">
   <meta property="og:site_name" content="LIPASON">
   <meta property="og:url" content="https://lipason.mx/">
-  <meta property="og:title" content="LIPASON | Ideas públicas que cobran vida">
-  <meta property="og:description" content="Explora proyectos académicos de innovación pública del ISAP convertidos en prototipos digitales funcionales.">
+  <meta property="og:title" content="LIPASON | Del papel al prototipo">
+  <meta property="og:description" content="Laboratorio de Innovación Pública Aplicada. Conocimiento, diseño y tecnología para imaginar mejores soluciones públicas.">
   <meta property="og:image" content="https://lipason.mx/assets/hero-scene.webp">
-  <meta property="og:image:secure_url" content="https://lipason.mx/assets/hero-scene.webp">
-  <meta property="og:image:type" content="image/webp">
-  <meta property="og:image:width" content="870">
-  <meta property="og:image:height" content="520">
-  <meta property="og:image:alt" content="LIPASON: del proyecto académico al prototipo digital de innovación pública">
-  <meta property="og:image" content="https://lipason.mx/assets/brand.png">
-  <meta property="og:image:secure_url" content="https://lipason.mx/assets/brand.png">
-  <meta property="og:image:type" content="image/png">
-  <meta property="og:image:alt" content="Isotipo institucional de LIPASON">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="LIPASON | Ideas públicas que cobran vida">
-  <meta name="twitter:description" content="Proyectos académicos de innovación pública convertidos en prototipos funcionales.">
-  <meta name="twitter:image" content="https://lipason.mx/assets/hero-scene.webp">
-  <title>LIPASON — Ideas públicas que cobran vida</title>
+  <meta name="twitter:title" content="LIPASON | Del papel al prototipo">
+  <meta name="twitter:description" content="Ideas públicas que cobran vida mediante la innovación aplicada.">
+  <title>LIPASON — Laboratorio de Innovación Pública Aplicada</title>
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;650;700;750;800;850&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/site.css?v=20261030-03">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    :root{--paper:#f8f9fd;--ink:#151d30;--muted:#606c7e;--line:#e2e7f1;--accent:#6255dd;--accent-soft:#efedff;--navy:#18223a}
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:var(--paper);color:var(--ink);font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.65;-webkit-font-smoothing:antialiased}
+    a{color:inherit;text-decoration:none}
+    img{display:block;max-width:100%}
+    .shell{width:min(100% - 88px,1240px);margin-inline:auto}
+    .skip{position:absolute;left:14px;top:-120px;background:white;padding:12px;z-index:20}.skip:focus{top:12px}
+    .header{border-bottom:1px solid var(--line);background:rgba(248,249,253,.98)}
+    .nav{display:flex;justify-content:space-between;align-items:center;min-height:86px;gap:24px}
+    .brand{display:flex;align-items:center;gap:12px}
+    .brand img{width:40px;height:40px}
+    .brand-name{font-weight:900;letter-spacing:-.07em;font-size:27px;line-height:1}
+    .brand-line{height:29px;width:1px;background:#cdd3e0;margin-inline:4px}
+    .brand-sub{font-size:10px;line-height:1.32;font-weight:600;color:#5b6576}
+    .navlinks{display:flex;align-items:center;gap:32px;font-size:12px;font-weight:700;color:#4d596b}
+    .navlinks a:hover,.footer a:hover{color:var(--accent)}
+    .hero{display:grid;grid-template-columns:1.04fr .96fr;align-items:center;gap:34px;min-height:620px;padding-block:80px 60px}
+    .eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:11px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
+    .eyebrow:before{content:"";display:inline-block;width:27px;height:2px;background:currentColor}
+    h1,h2,h3,p{margin-top:0}
+    h1{font-size:clamp(55px,6vw,89px);line-height:1.035;letter-spacing:-.075em;font-weight:850;margin:28px 0}
+    h1 em{font-style:normal;color:var(--accent)}
+    .lead{font-size:17px;max-width:560px;color:var(--muted);line-height:1.86;margin-bottom:32px;text-align:justify}
+    .lead strong{color:var(--ink);font-weight:750}
+    .cta{display:inline-flex;align-items:center;gap:22px;padding:15px 22px;border-radius:8px;background:var(--navy);color:white;font-size:13px;font-weight:750;transition:transform .2s,background .2s}
+    .cta:hover{background:#3b36a1;transform:translateY(-2px)}
+    .art{position:relative}
+    .art:before{content:"";position:absolute;z-index:-1;inset:12% 7%;border-radius:50%;background:radial-gradient(circle,#ebe8ff 10%,transparent 68%)}
+    .art img{width:100%;height:auto;object-fit:contain}
+    .rule{height:1px;background:var(--line)}
+    .section{padding-block:100px}
+    .section-top{max-width:775px}
+    .kicker{display:block;color:var(--accent);text-transform:uppercase;letter-spacing:.14em;font-size:11px;font-weight:800;margin-bottom:18px}
+    h2{font-size:clamp(35px,4vw,55px);line-height:1.14;letter-spacing:-.055em;font-weight:800;margin-bottom:20px}
+    .section-top>p{font-size:16px;color:var(--muted);line-height:1.9;text-align:justify}
+    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:17px;margin-top:44px}
+    .card{border:1px solid var(--line);border-radius:15px;background:#fff;padding:29px 27px 33px;min-height:240px}
+    .n{display:inline-block;font-size:13px;font-weight:850;color:var(--accent);margin-bottom:30px}
+    .card h3{font-size:19px;letter-spacing:-.035em;margin-bottom:12px}
+    .card p{font-size:13px;line-height:1.82;color:var(--muted);margin:0;text-align:justify}
+    .band{background:var(--navy);color:#fff}
+    .band-inner{display:grid;grid-template-columns:.85fr 1.15fr;gap:65px;align-items:start}
+    .band .kicker{color:#b9aeff}
+    .band h2{color:#fff}
+    .band p{font-size:16px;line-height:1.95;color:#d1d7e6;text-align:justify;margin-bottom:20px}
+    .future{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
+    .future p{font-size:16px;color:var(--muted);line-height:1.95;text-align:justify}
+    .accent-rule{width:56px;height:4px;background:var(--accent);margin-bottom:25px}
+    .footer{border-top:1px solid var(--line);padding-block:46px}
+    .footer-main{display:flex;justify-content:space-between;gap:22px;align-items:end}
+    .footer-logo{font-size:27px;letter-spacing:-.075em;font-weight:900}
+    .footer-logo span{color:var(--accent)}
+    .footer p,.footer small{font-size:12px;color:var(--muted);margin:8px 0 0}
+    .footer-meta{text-align:right;font-size:12px;color:var(--muted)}
+    @media(max-width:900px){.shell{width:min(100% - 40px,1240px)}.navlinks{gap:16px}.hero{min-height:0;grid-template-columns:1fr;gap:18px;padding-block:65px 40px}.hero-copy{max-width:750px}.art{max-width:610px;margin:auto}.cards{grid-template-columns:1fr 1fr}.band-inner,.future{grid-template-columns:1fr;gap:18px}}
+    @media(max-width:600px){.nav{min-height:76px}.brand img{width:34px;height:34px}.brand-name{font-size:24px}.brand-sub{font-size:8px}.brand-line{margin-inline:0}.navlinks{display:none}h1{font-size:clamp(52px,13vw,75px)}.hero{padding-block:55px 32px}.lead{font-size:15px}.section{padding-block:67px}.cards{grid-template-columns:1fr}.card{min-height:0}.future{gap:18px}.footer-main{align-items:start;flex-direction:column}.footer-meta{text-align:left}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.cta{transition:none}}
+  </style>
 </head>
 <body>
-  <a class="skip-link" href="#contenido">Ir al contenido</a>
-  <header class="site-header" id="inicio">
-    <div class="shell nav-row">
+  <a class="skip" href="#contenido">Ir al contenido</a>
+  <header class="header" id="inicio">
+    <div class="shell nav">
       <a class="brand" href="#inicio" aria-label="LIPASON, inicio">
-        <img class="brand-symbol" src="assets/brand.svg" alt="" width="42" height="42">
-        <span class="brand-word">LIPASON</span>
-        <span class="brand-divider" aria-hidden="true"></span>
-        <span class="brand-caption">Laboratorio de<br>Innovación Pública Aplicada</span>
+        <img src="assets/brand.svg" alt="" width="40" height="40">
+        <span class="brand-name">LIPASON</span>
+        <span class="brand-line" aria-hidden="true"></span>
+        <span class="brand-sub">Laboratorio de<br>Innovación Pública Aplicada</span>
       </a>
-      <nav class="desktop-nav" aria-label="Navegación principal">
-        <a href="#prototipos">Prototipos</a>
-        <a href="#metodologia">Metodología</a>
-        <a href="#origen">Nuestro origen</a>
+      <nav class="navlinks" aria-label="Navegación principal">
+        <a href="#proposito">Propósito</a>
+        <a href="#enfoque">Enfoque</a>
         <a href="#proyeccion">Proyección</a>
       </nav>
-      <a class="header-link" href="#prototipos">Explorar proyectos <span aria-hidden="true">↗</span></a>
-      <button id="menuToggle" class="menu-toggle" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobileNav"><span></span><span></span><span></span></button>
     </div>
-    <nav class="mobile-nav" id="mobileNav" aria-label="Navegación móvil" hidden>
-      <a href="#prototipos">Prototipos</a><a href="#metodologia">Metodología</a><a href="#origen">Nuestro origen</a><a href="#proyeccion">Proyección</a>
-    </nav>
   </header>
   <main id="contenido">
-    <section class="hero shell" aria-labelledby="heroTitle">
+    <section class="hero shell" aria-labelledby="titulo">
       <div class="hero-copy">
-        <span class="eyebrow">INNOVACIÓN PÚBLICA DESDE EL AULA</span>
-        <h1 id="heroTitle">Ideas públicas<br>que cobran <em>vida.</em></h1>
-        <p class="lead"><strong>Cada proyecto merece verse en acción.</strong> En LIPASON convertimos los trabajos finales de la Maestría en Administración Pública del ISAP en prototipos funcionales que permiten explorar las propuestas y visualizar cómo podrían llevarse a la práctica.</p>
-        <div class="hero-buttons">
-          <a class="btn btn-dark" href="#prototipos">Explorar proyectos <span aria-hidden="true">→</span></a>
-          <a class="btn btn-outline" href="#metodologia">Conoce la metodología</a>
-        </div>
+        <span class="eyebrow">Laboratorio de Innovación Pública Aplicada</span>
+        <h1 id="titulo">Del papel al<br><em>prototipo.</em></h1>
+        <p class="lead"><strong>Ideas públicas que cobran vida.</strong> LIPASON es un espacio de innovación aplicada que busca conectar el conocimiento, la creatividad y las herramientas digitales para explorar nuevas respuestas a los desafíos de la administración pública.</p>
+        <a class="cta" href="#proposito">Conoce nuestro propósito <span aria-hidden="true">→</span></a>
       </div>
-      <div class="hero-art hero-art-original" aria-hidden="true">
-        <img class="hero-original-image"
-             src="assets/hero-scene.webp"
-             onerror="this.onerror=null;this.src='assets/hero-respaldo.webp';"
-             alt=""
-             width="870" height="520"
-             decoding="async" fetchpriority="high">
+      <div class="art" aria-hidden="true">
+        <img src="assets/hero-scene.webp" alt="" width="870" height="520" decoding="async" fetchpriority="high">
       </div>
     </section>
-    <div class="shell"><div class="hero-rule"></div></div>
-    <section class="section shell catalog" id="prototipos" aria-labelledby="catalogTitle">
-      <div class="section-header catalog-header">
-        <div><span class="section-label">01 / PROPUESTAS Y PROTOTIPOS</span><h2 id="catalogTitle">Propuestas que <strong>toman forma.</strong></h2><p>Esta colección reúne propuestas formuladas por las y los estudiantes como trabajos finales de <em>Calidad y Modernización en el Servicio Público</em>, de la Maestría en Administración Pública del ISAP. Cada ficha reconoce la autoría del proyecto y permite acceder a un prototipo funcional para conocer sus características y explorar su posible aplicación.</p></div>
-        <div class="catalog-tools"><label class="search-wrap"><svg viewBox="0 0 24 24" width="17" height="17" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m16 16 5 5"/></svg><span class="sr-only">Buscar prototipos</span><input id="searchProjects" type="search" placeholder="Buscar un prototipo…" autocomplete="off"></label><span class="catalog-count" id="catalogCount" aria-live="polite">Consultando catálogo</span></div>
+    <div class="shell"><div class="rule"></div></div>
+    <section class="section shell" id="proposito" aria-labelledby="titulo-proposito">
+      <div class="section-top">
+        <span class="kicker">01 / Nuestro propósito</span>
+        <h2 id="titulo-proposito">Convertir el conocimiento en posibilidades.</h2>
+        <p>Creemos que las buenas ideas pueden trascender el documento cuando encuentran espacios para ser exploradas, representadas y mejoradas. LIPASON promueve una forma práctica de abordar los retos públicos, haciendo del diseño y la experimentación herramientas para aprender, colaborar e imaginar soluciones.</p>
       </div>
-      <div id="catalogNotice" class="catalog-notice" role="status" hidden></div>
-      <div id="projectGrid" class="project-grid" aria-live="polite"><div class="catalog-loading">Cargando proyectos publicados…</div></div>
-      <p class="catalog-footnote">Estos prototipos son desarrollos demostrativos de carácter académico, no servicios gubernamentales en operación. Su publicación no implica validación ni adopción por parte de las instituciones a las que pudieran estar dirigidos.</p>
+      <div class="cards">
+        <article class="card"><span class="n">01 —</span><h3>Conocimiento aplicado</h3><p>Conectar el análisis y la reflexión con alternativas concretas de mejora para la gestión y los servicios públicos.</p></article>
+        <article class="card"><span class="n">02 —</span><h3>Innovación y diseño</h3><p>Traducir ideas en experiencias que faciliten comprender, evaluar y perfeccionar su posible funcionamiento.</p></article>
+        <article class="card"><span class="n">03 —</span><h3>Colaboración abierta</h3><p>Propiciar el encuentro entre distintas perspectivas y disciplinas para enriquecer las soluciones a problemas comunes.</p></article>
+      </div>
     </section>
-    <section class="section methodology-section" id="metodologia" aria-labelledby="methodTitle">
-      <div class="shell method-layout">
-        <div class="method-intro"><span class="section-label light">02 / DE LAS IDEAS A LOS PROTOTIPOS</span><h2 id="methodTitle">Del aula<br>a la <em>experiencia.</em></h2><p>Una ruta que parte de las propuestas académicas, las traduce en experiencias digitales interactivas y permite compartirlas de forma abierta. El prototipo hace visible el potencial de la idea y facilita conocer cómo podría funcionar.</p><a class="text-link-light" href="#origen">Conoce el origen académico <span aria-hidden="true">↗</span></a></div>
-        <div class="method-steps">
-          <article><span class="step-num">01</span><div><span class="step-role">EL PUNTO DE PARTIDA</span><h3>Conocer la propuesta</h3><p>Partimos de los problemas públicos y las soluciones planteadas por las y los estudiantes en sus trabajos finales.</p></div></article>
-          <article><span class="step-num">02</span><div><span class="step-role">DEL DOCUMENTO A LA EXPERIENCIA</span><h3>Interpretar su funcionamiento</h3><p>Identificamos el propósito de cada iniciativa, las personas a quienes se dirige y las funciones necesarias para representarla digitalmente.</p></div></article>
-          <article><span class="step-num">03</span><div><span class="step-role">DESARROLLO FUNCIONAL</span><h3>Dar forma a la idea</h3><p>Desarrollamos un prototipo interactivo que permite recorrer las funciones propuestas y apreciar cómo sería su uso en un entorno práctico.</p></div></article>
-          <article><span class="step-num">04</span><div><span class="step-role">PUBLICACIÓN Y DIFUSIÓN</span><h3>Ponerlo al alcance de otros</h3><p>Publicamos los desarrollos para que puedan conocerse, explorarse y servir como referencia ante un eventual interés en las propuestas.</p></div></article>
+    <section class="section band" id="enfoque" aria-labelledby="titulo-enfoque">
+      <div class="shell band-inner">
+        <div><span class="kicker">02 / Nuestro enfoque</span><h2 id="titulo-enfoque">Imaginar.<br>Diseñar.<br>Explorar.</h2></div>
+        <div>
+          <p>La innovación pública comienza al cuestionar cómo se hacen las cosas y cómo podrían hacerse mejor. Nuestro enfoque parte de comprender los desafíos, identificar oportunidades y dar forma a posibles respuestas mediante recursos metodológicos, creativos y tecnológicos.</p>
+          <p>El prototipado permite hacer visibles las ideas, facilitar el diálogo sobre ellas y aprender antes de considerar su eventual aplicación. Es una herramienta para explorar posibilidades, no una promesa de implementación institucional.</p>
         </div>
       </div>
     </section>
-
-    <section class="section shell origin-section" id="origen" aria-labelledby="originTitle">
-      <div class="origin-marker"><span class="section-label">03 / ORIGEN ACADÉMICO</span><div class="origin-stamp">LIPASON <b>↗</b></div></div>
-      <div class="origin-copy">
-        <h2 id="originTitle">Donde termina el documento,<br><strong>comienza la innovación.</strong></h2>
-        <p>LIPASON surge a partir de los trabajos finales de la asignatura <em>Calidad y Modernización en el Servicio Público</em>, impartida en la <strong>Maestría en Administración Pública del Instituto Sonorense de Administración Pública (ISAP)</strong>. En esos trabajos, las y los estudiantes identificaron problemas de la gestión pública, analizaron sus causas y formularon propuestas de innovación y mejora.</p>
-        <p>LIPASON toma esas propuestas como punto de partida para <strong>convertirlas en prototipos digitales funcionales</strong> y ponerlas al alcance del público. Así, el trabajo académico adquiere una expresión práctica que puede conocerse y explorarse sin perder de vista la autoría de quienes concibieron cada iniciativa.</p>
-        <div class="origin-note"><span aria-hidden="true">ⓘ</span><p>LIPASON surge del trabajo académico desarrollado en la Maestría en Administración Pública del ISAP. La mención del Instituto reconoce el origen de las propuestas; cualquier vinculación o respaldo institucional se hará constar cuando corresponda, respetando la autoría de las y los estudiantes.</p></div>
-      </div>
-    </section>
-    <section class="section shell collaboration-section" id="proyeccion" aria-labelledby="collabTitle">
-      <div class="collaboration-intro">
-        <span class="section-label">04 / ALCANCE Y PROYECCIÓN</span>
-        <h2 id="collabTitle">Ideas que pueden<br><strong>abrir nuevas posibilidades.</strong></h2>
-      </div>
-      <div class="collaboration-focus">
-        <p>La publicación de estos prototipos permite que <strong>estudiantes, docentes, personas servidoras públicas y otros públicos interesados</strong> conozcan las propuestas, exploren su funcionamiento y aprecien alternativas de mejora en la administración y los servicios públicos.</p>
-        <p>Además de dar visibilidad al trabajo académico, esta plataforma puede favorecer el intercambio de ideas y el acercamiento con áreas interesadas en soluciones de innovación pública. <strong>Cuando existan las condiciones y autorizaciones correspondientes</strong>, una propuesta podría ser valorada para su adecuación o eventual desarrollo institucional.</p>
-        <a class="collaboration-link" href="#prototipos">Explora las propuestas y sus prototipos <span aria-hidden="true">↗</span></a>
-        <small>Los trabajos conservan la autoría de sus estudiantes. Los prototipos son demostraciones académicas; su publicación no representa la aprobación, implementación o adopción de las propuestas por parte del ISAP o de alguna institución gubernamental.</small>
-      </div>
+    <section class="section shell future" id="proyeccion" aria-labelledby="titulo-futuro">
+      <div><span class="kicker">03 / Visión y proyección</span><h2 id="titulo-futuro">Nuevas formas de pensar lo público.</h2></div>
+      <div><div class="accent-rule"></div><p>Aspiramos a contribuir a una cultura de innovación orientada al valor público, en la que el conocimiento y la tecnología ayuden a construir mejores preguntas, compartir aprendizajes y explorar caminos de transformación.</p><p>LIPASON concibe la innovación como un proceso abierto al aprendizaje, la colaboración y la mejora continua.</p></div>
     </section>
   </main>
-  <footer class="footer"><div class="shell footer-layout"><div><a class="footer-logo" href="#inicio">LIPA<span>SON</span><i>.</i></a><p>Laboratorio de Innovación Pública Aplicada.<br>Prototipos académicos · Maestría en Administración Pública del ISAP · Sonora, México.<br><button class="footer-contact" type="button" id="footerContact" aria-label="Escribir al correo de LIPASON"><img id="footerContactImage" alt="Correo institucional de LIPASON" width="170" height="30" decoding="async"></button></p></div><nav aria-label="Enlaces del pie de página"><a href="#prototipos">Prototipos</a><a href="#metodologia">Metodología</a><a href="#origen">Nuestro origen</a><a href="#proyeccion">Proyección</a><a class="editor-link" href="admin.html" title="Acceso al panel de control">Panel de control</a></nav></div><div class="shell footer-bottom"><span>Ideas públicas que cobran vida.</span><span>Innovación pública · Prototipos funcionales · Difusión abierta</span></div></footer>
-
-  <dialog class="project-dialog" id="projectDialog" aria-labelledby="dialogTitle">
-    <button id="dialogClose" class="dialog-close" type="button" aria-label="Cerrar ficha">×</button>
-    <div class="dialog-grid">
-      <div class="dialog-image-wrap"><img id="dialogImage" alt="Imagen del prototipo" src="assets/project-fallback.svg"><span class="dialog-image-label">FICHA DEL PROYECTO</span></div>
-      <div class="dialog-info">
-        <div class="dialog-head"><span class="section-label">PROTOTIPO ACADÉMICO / LIPASON</span><h2 id="dialogTitle">Proyecto</h2><p id="dialogSummary" class="dialog-summary"></p></div>
-        <div class="dialog-primary-action"><a id="prototypeLink" class="btn btn-purple" href="#" rel="noopener noreferrer" target="_blank" hidden>Explorar prototipo <span aria-hidden="true">↗</span></a><p id="missingLink" class="missing-link" hidden>El enlace de este prototipo aún no está incorporado a la ficha.</p></div>
-        <div id="dialogFields" class="dialog-fields"></div>
-        <p class="dialog-disclaimer">Este prototipo es un desarrollo demostrativo de carácter académico; no representa un servicio gubernamental en operación ni una validación institucional. No ingreses datos personales reales.</p>
-        <div class="dialog-bottom"><button id="copyProject" class="copy-link" type="button">Copiar enlace a esta ficha <span aria-hidden="true">↗</span></button></div>
-      </div>
+  <footer class="footer">
+    <div class="shell footer-main">
+      <div><div class="footer-logo">LIPA<span>SON.</span></div><p>Laboratorio de Innovación Pública Aplicada</p><small>Sonora, México</small></div>
+      <div class="footer-meta">Ideas públicas que cobran vida.<br>Innovación · Conocimiento · Colaboración</div>
     </div>
-  </dialog>
-  <div class="toast" id="toast" role="status" aria-live="polite"></div>
-  <script src="config.js"></script>
-  <script defer src="assets/site.js?v=20261030-03"></script>
+  </footer>
 </body>
 </html>
